@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categorie;
 use Illuminate\Http\Request;
 
 class CategorieController extends Controller
@@ -11,7 +12,9 @@ class CategorieController extends Controller
      */
     public function index()
     {
-        return view('categorie.index');
+        $categories = Categorie::all();
+        
+        return view('categorie.index', ['categories' => $categories]);
     }
 
     /**
@@ -27,7 +30,15 @@ class CategorieController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'libelle' => 'required',
+        ]);
+
+        $categorie = new Categorie();
+        $categorie->libelle = $request->libelle;
+        $categorie->save();
+
+        return redirect()->route('categorie.index')->with('status', 'La catégorie de cours a bien été enregistré.');
     }
 
     /**

@@ -6,8 +6,15 @@
 
     <div class="row">
 
+        @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        @endif
+
         <div class="col">
-            <form action="#">
+            <form action="{{ route('categorie.store') }}" method="POST">
+                @csrf
                 <div class="row gy-20">
 
                     <div class="col">
@@ -55,14 +62,18 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($categories as $item)
+                            
                         <tr>
-                            <td>1</td>
-                            <td>Test</td>
+                            <td class="text-black"> {{ $item->id }} </td>
+                            <td class="text-black"> {{ $item->libelle }} </td>
                             <td>
                                 <a href="#" class="btn btn-info">Update</a>
                                 <a href="#" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
+                        
+                        @endforeach
                     </tbody>
                 </table>
             </div>

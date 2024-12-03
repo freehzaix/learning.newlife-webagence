@@ -27,6 +27,7 @@ Route::middleware('auth')->group(function () {
 Route::prefix('/dashboard')->group(function(){
     /** Catégorie produite */
     Route::get('/categories', [CategorieController::class, 'index'])->name('categorie.index');
+    Route::post('/categorie/store', [CategorieController::class, 'store'])->name('categorie.store');
 })->middleware(['auth', 'verified']);
 
 require __DIR__.'/auth.php';
