@@ -41,6 +41,19 @@
             gap: 8px;
             text-transform: none;
         }
+
+        .btn {
+            position: relative;
+            border-radius: 6px;
+            border: 1px solid transparent;
+            font-weight: 500;
+            font-family: var(--body-font);
+            z-index: 1;
+            line-height: 1;
+            padding: 14px 20px;
+            font-size: 15px;
+            text-transform: none;
+        }
     </style>
 </head>
 
@@ -199,7 +212,7 @@
 
                 </ul>
             </div>
-            
+
         </div>
 
     </aside>
@@ -236,7 +249,8 @@
                         class="users arrow-down-icon border border-gray-200 rounded-pill p-4 d-inline-block pe-40 position-relative"
                         type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <span class="position-relative">
-                            <img src="{{ asset(Auth::user()->avatar) }}" alt="Image" class="h-32 w-32 rounded-circle">
+                            <img src="{{ asset(Auth::user()->avatar) }}" alt="Image"
+                                class="h-32 w-32 rounded-circle">
                             <span
                                 class="activation-badge w-8 h-8 position-absolute inset-block-end-0 inset-inline-end-0"></span>
                         </span>
@@ -453,9 +467,12 @@
                     labels: {
                         show: false
                     },
-                    categories: [`Janvier ${currentYear}`, `Février ${currentYear}`, `Mars ${currentYear}`, `Avril ${currentYear}`,
-                        `Mai ${currentYear}`, `Juin ${currentYear}`, `Juillet ${currentYear}`, `Août ${currentYear}`,
-                        `Septembre ${currentYear}`, `Octobre ${currentYear}`, `Novembre ${currentYear}`, `Décembre ${currentYear}`
+                    categories: [`Janvier ${currentYear}`, `Février ${currentYear}`, `Mars ${currentYear}`,
+                        `Avril ${currentYear}`,
+                        `Mai ${currentYear}`, `Juin ${currentYear}`, `Juillet ${currentYear}`,
+                        `Août ${currentYear}`,
+                        `Septembre ${currentYear}`, `Octobre ${currentYear}`, `Novembre ${currentYear}`,
+                        `Décembre ${currentYear}`
                     ],
                     tooltip: {
                         enabled: false,
@@ -575,7 +592,9 @@
                     labels: {
                         show: false
                     },
-                    categories: [`Janvier`, `Février`, `Mars`, `Avril`, `Mai`, `Juin`, `Juillet`, `Août`, `Septembre`, `Octobre`, `Novembre`, `Décembre`],
+                    categories: [`Janvier`, `Février`, `Mars`, `Avril`, `Mai`, `Juin`, `Juillet`, `Août`, `Septembre`,
+                        `Octobre`, `Novembre`, `Décembre`
+                    ],
                     tooltip: {
                         enabled: false,
                     },

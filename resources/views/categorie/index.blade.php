@@ -68,8 +68,8 @@
                             <td class="text-black"> {{ $item->id }} </td>
                             <td class="text-black"> {{ $item->libelle }} </td>
                             <td>
-                                <a href="#" class="btn btn-info">Update</a>
-                                <a href="#" class="btn btn-danger">Delete</a>
+                                <a href="{{ route('categorie.show', $item->id) }}" class="btn btn-info">Modifier</a>
+                                <a href="{{ route('categorie.destroy', $item->id) }}" class="btn btn-danger">Supprimer</a>
                             </td>
                         </tr>
                         

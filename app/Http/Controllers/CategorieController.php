@@ -46,7 +46,9 @@ class CategorieController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $categorie = Categorie::find($id);
+
+        return view('categorie.show', ['categorie' => $categorie]);
     }
 
     /**
@@ -60,9 +62,14 @@ class CategorieController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        //
+        //Enregistrer les modifications d'une categorie
+        $categorie = Categorie::find($request->id);
+        $categorie->libelle = $request->libelle;
+        $categorie->save();
+
+        return redirect()->route('categorie.index')->with('status', 'La catégorie de cours a bien été modifié.');
     }
 
     /**
@@ -70,6 +77,10 @@ class CategorieController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // Supprimer la categorie
+        $categorie = Categorie::find($id);
+        $categorie->delete();
+        
+        return redirect()->route('categorie.index')->with('status', 'La catégorie de cours a bien été supprimé.');
     }
 }
