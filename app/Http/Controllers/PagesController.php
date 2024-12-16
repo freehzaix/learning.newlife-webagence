@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categorie;
 use Illuminate\Http\Request;
 
 class PagesController extends Controller
@@ -11,7 +12,9 @@ class PagesController extends Controller
      */
     public function index()
     {
-        return view('pages.index');
+        $categories = Categorie::all();
+
+        return view('pages.index', ['categories' => $categories]);
     }
 
     public function apropos()
@@ -21,7 +24,9 @@ class PagesController extends Controller
 
     public function nosformations()
     {
-        return view('pages.nosformations');
+        $categories = Categorie::all();
+
+        return view('pages.nosformations', ['categories' => $categories]);
     }
 
     public function blog()

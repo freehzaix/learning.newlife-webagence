@@ -19,7 +19,8 @@ class RoleSeeder extends Seeder
          * 3. Apprenant
          * php artisan db:seed --class=RoleSeeder
         */
-        $role1 = new Role();
+        
+        /* $role1 = new Role();
         $role1->libelle = "Administrateur";
         $role1->save();
 
@@ -29,7 +30,7 @@ class RoleSeeder extends Seeder
 
         $role3 = new Role();
         $role3->libelle = "Apprenant";
-        $role3->save();
+        $role3->save(); */
 
     }
 }

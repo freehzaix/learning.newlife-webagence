@@ -1,6 +1,6 @@
 <x-zfront>
 
-    
+
 
     <!--================= back wrapper Start Here =================-->
     <div class="back-wrapper">
@@ -19,8 +19,11 @@
                     <div class="row">
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                             <div class="hero3__content pt-140 sm-pt-0">
-                                <h1 class="hero3__title" style="font-size: 40px; line-height: 45px;">Apprenez et devenez spécialiste en marketing stratégique et digital</h1>
-                                <p class="hero3__paragraph">Découvrez notre plateforme de formation en ligne, conçue pour vous offrir des compétences pratiques à votre rythme, avec des cours interactifs et accessibles partout.</p>
+                                <h1 class="hero3__title" style="font-size: 40px; line-height: 45px;">Apprenez et devenez
+                                    spécialiste en marketing stratégique et digital</h1>
+                                <p class="hero3__paragraph">Découvrez notre plateforme de formation en ligne, conçue
+                                    pour vous offrir des compétences pratiques à votre rythme, avec des cours
+                                    interactifs et accessibles partout.</p>
                             </div>
                         </div>
                         <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 col-sm-12">
@@ -50,17 +53,15 @@
                     <div class="row d-flex align-items-end">
                         <div class="col-lg-5">
                             <div class="back__title__section text-left">
-                                <h6 class="back__subtitle">Our Activities</h6>
-                                <h2 class="back__tittle"> Our popular Classes </h2>
+                                <h6 class="back__subtitle">Nos formations</h6>
+                                <h2 class="back__tittle"> Découvez nos formations </h2>
                             </div>
                         </div>
                         <div class="col-lg-7 text-right">
                             <div class="back-filter">
-                                <button class="active" data-filter="*">All</button>
-                                <button data-filter=".filter1">Trending</button>
-                                <button data-filter=".filter2">School</button>
-                                <button data-filter=".filter3">Popularity</button>
-                                <button data-filter=".filter4">Academic</button>
+                                @foreach ($categories as $item)
+                                <button data-filter=".filter{{ $item->id }}">{{ $item->libelle }}</button>
+                                @endforeach
                             </div>
                         </div>
                     </div>

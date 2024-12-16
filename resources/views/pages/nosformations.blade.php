@@ -346,65 +346,22 @@
                                     </form>
                                 </div>
                                 <div class="widget back-category">
-                                    <h3 class="widget-title">Categories</h3>
+                                    <h3 class="widget-title">Catégories</h3>
                                     <ul class="recent-category">
-                                        <li>
-                                            <input type="checkbox" id="fruit1" name="fruit-1" value="Featured">
-                                            <label for="fruit1">Featured courses <span
-                                                    class="category-count">(8)</span></label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" id="fruit2" name="fruit-2" value="Education">
-                                            <label for="fruit2">Education <span
-                                                    class="category-count">(5)</span></label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" id="fruit3" name="fruit-3" value="Business">
-                                            <label for="fruit3">Business <span
-                                                    class="category-count">(3)</span></label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" id="fruit4" name="fruit-4" value="Management">
-                                            <label for="fruit4">IT Management <span
-                                                    class="category-count">(7)</span></label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" id="fruit5" name="fruit-5"
-                                                value="Development">
-                                            <label for="fruit5">Development <span
-                                                    class="category-count">(6)</span></label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" id="fruit6" name="fruit-6" value="Creative">
-                                            <label for="fruit6">Creative <span
-                                                    class="category-count">(2)</span></label>
-                                        </li>
+                                        @foreach ($categories as $categorie)
+                                            <li>
+                                                <input type="checkbox" id="categorie{{ $categorie->id }}"
+                                                    name="categorie-{{ $categorie->id }}" value="Featured">
+                                                <label for="categorie{{ $categorie->id }}"> {{ $categorie->libelle }}
+                                                </label>
+                                            </li>
+                                        @endforeach
+
                                     </ul>
                                 </div>
+
                                 <div class="widget back-category">
-                                    <h3 class="widget-title">Price Filter</h3>
-                                    <ul class="recent-category">
-                                        <li>
-                                            <input type="checkbox" id="fruit7" name="fruit-7" value="all">
-                                            <label for="fruit7">All <span
-                                                    class="category-count">(209)</span></label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" id="fruit8" name="fruit-8"
-                                                value="Free Courses">
-                                            <label for="fruit8">Free Courses <span
-                                                    class="category-count">(36)</span></label>
-                                        </li>
-                                        <li>
-                                            <input type="checkbox" id="fruit9" name="fruit-9"
-                                                value="Premium Courses">
-                                            <label for="fruit9">Premium Courses <span
-                                                    class="category-count">(185)</span></label>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="widget back-category">
-                                    <h3 class="widget-title">Skill level</h3>
+                                    <h3 class="widget-title">Niveau de compétence</h3>
                                     <ul class="recent-category">
                                         <li>
                                             <input type="checkbox" id="fruit10" name="fruit-10"
