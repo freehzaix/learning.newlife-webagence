@@ -55,6 +55,18 @@
             text-transform: none;
         }
     </style>
+
+    <!-- JavaScript -->
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/alertify.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/alertify.min.css"/>
+    <!-- Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/default.min.css"/>
+    <!-- Semantic UI theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/semantic.min.css"/>
+    <!-- Bootstrap theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.14.0/build/css/themes/bootstrap.min.css"/>
 </head>
 
 <body>
@@ -103,7 +115,7 @@
                                 <a href="{{ route('categorie.index') }}" class="sidebar-submenu__link"> Catégories </a>
                             </li>
                             <li class="sidebar-submenu__item">
-                                <a href="#" class="sidebar-submenu__link"> Niveau de compétences </a>
+                                <a href="{{ route('niveau.index') }}" class="sidebar-submenu__link"> Niveau de compétences </a>
                             </li>
                             <li class="sidebar-submenu__item">
                                 <a href="#" class="sidebar-submenu__link"> Toutes les formations </a>

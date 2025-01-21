@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\NiveauController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -26,7 +27,10 @@ Route::middleware('auth')->group(function () {
 
 Route::prefix('/dashboard')->group(function(){
 
-    /** Catégorie produite */
+    /** Niveau de formation */
+    Route::get('/niveaux', [NiveauController::class, 'index'])->name('niveau.index');
+    
+    /** Catégorie de formation */
     Route::get('/categories', [CategorieController::class, 'index'])->name('categorie.index');
     Route::post('/categorie/store', [CategorieController::class, 'store'])->name('categorie.store');
     Route::get('/categorie/{id}/show', [CategorieController::class, 'show'])->name('categorie.show');

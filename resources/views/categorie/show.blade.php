@@ -7,9 +7,9 @@
     <div class="row">
 
         @if (session('status'))
-            <div class="alert alert-success">
-                {{ session('status') }}
-            </div>
+            <script>
+                var notification = alertify.notify('{{ session('status') }}', 'success', 5, function(){  console.log('dismissed'); });
+            </script>
         @endif
 
         <div class="col">
