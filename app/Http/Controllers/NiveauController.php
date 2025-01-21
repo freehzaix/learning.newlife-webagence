@@ -12,7 +12,9 @@ class NiveauController extends Controller
      */
     public function index()
     {
-        //
+        $niveaux = Niveau::all();
+        
+        return view('niveau.index', ['niveaux' => $niveaux]);
     }
 
     /**
@@ -28,15 +30,25 @@ class NiveauController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'libelle' => 'required',
+        ]);
+
+        $niveau = new Niveau();
+        $niveau->libelle = $request->libelle;
+        $niveau->save();
+
+        return redirect()->route('niveau.index')->with('status', 'La niveau de compétence a bien été enregistré.');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Niveau $niveau)
+    public function show(string $id)
     {
-        //
+        $niveau = Niveau::find($id);
+
+        return view('niveau.show', ['niveau' => $niveau]);
     }
 
     /**

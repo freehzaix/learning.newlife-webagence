@@ -29,6 +29,10 @@ Route::prefix('/dashboard')->group(function(){
 
     /** Niveau de formation */
     Route::get('/niveaux', [NiveauController::class, 'index'])->name('niveau.index');
+    Route::post('/niveau/store', [NiveauController::class, 'store'])->name('niveau.store');
+    Route::get('/niveau/{id}/show', [NiveauController::class, 'show'])->name('niveau.show');
+    Route::post('/niveau/update', [NiveauController::class, 'update'])->name('niveau.update');
+    Route::get('/niveau/{id}/destroy', [NiveauController::class, 'destroy'])->name('niveau.destroy');
     
     /** Catégorie de formation */
     Route::get('/categories', [CategorieController::class, 'index'])->name('categorie.index');
